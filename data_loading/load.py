@@ -1,5 +1,5 @@
 """
-Contains function for loading data from CSV
+Contains function for loading data from CSV.
 """
 import csv
 
@@ -9,7 +9,7 @@ def load_from_csv(
     delimiter: str = ",",
 ) -> list[list[str]]:
     """
-    Loads data from CSV
+    Loads data from CSV.
     """
     rows = []
     with open(csv_path, encoding="utf-8") as csv_file:
