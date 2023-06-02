@@ -1,7 +1,9 @@
 """
 Main entry point for program.
 """
+import classifier
 import data_loading
+import pipeline
 
 
 def main():
@@ -13,7 +15,13 @@ def main():
         all_rows,
         ratio_train=0.5,
     )
-    print(len(train_rows), len(test_rows))
+    formatter = data_loading.Formatter()
+    acc = pipeline.run_pipeline(
+        formatter.format_rows(train_rows),
+        formatter.format_rows(test_rows),
+        classifier.KNearestClassifier(k=7),
+    )
+    print(f"Accuracy: {100 * acc:.2f}%")
 
 
 if __name__ == "__main__":

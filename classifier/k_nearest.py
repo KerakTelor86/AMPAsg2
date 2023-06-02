@@ -25,8 +25,10 @@ class KNearestClassifier(base.BaseClassifier):
             dist_y_pair: list[tuple[float, int]] = []
             for train_x_val, train_y_val in self.train_data:
                 dist_y_pair.append(
-                    self.__distance(x_val, train_x_val),
-                    train_y_val,
+                    (
+                        self.__distance(x_val, train_x_val),
+                        train_y_val,
+                    )
                 )
 
             # sort
@@ -42,7 +44,7 @@ class KNearestClassifier(base.BaseClassifier):
 
             # determine winner by number of votes
             max_votes, winner = 0, -1
-            for key, num_votes in votes:
+            for key, num_votes in votes.items():
                 if num_votes > max_votes:
                     max_votes = num_votes
                     winner = key
