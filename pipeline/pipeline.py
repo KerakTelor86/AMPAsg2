@@ -1,3 +1,6 @@
+"""
+Implements the pipeline function.
+"""
 import classifier
 
 

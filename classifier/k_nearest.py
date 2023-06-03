@@ -26,7 +26,7 @@ class KNearestClassifier(base.BaseClassifier):
             for train_x_val, train_y_val in self.train_data:
                 dist_y_pair.append(
                     (
-                        self.__distance(x_val, train_x_val),
+                        _distance(x_val, train_x_val),
                         train_y_val,
                     )
                 )
@@ -52,9 +52,10 @@ class KNearestClassifier(base.BaseClassifier):
 
         return ans
 
-    def __distance(self, x_val1: list[float], x_val2: list[float]) -> float:
-        total = 0
-        for idx, val1 in enumerate(x_val1):
-            val2 = x_val2[idx]
-            total += (val1 - val2) ** 2
-        return total**0.5
+
+def _distance(x_val1: list[float], x_val2: list[float]) -> float:
+    total = 0
+    for idx, val1 in enumerate(x_val1):
+        val2 = x_val2[idx]
+        total += (val1 - val2) ** 2
+    return total**0.5
