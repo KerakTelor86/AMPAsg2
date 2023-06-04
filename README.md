@@ -1,5 +1,9 @@
 # 0AL5430 - Adaptive Media Processing
 
+Richard Alison  
+202320694  
+University of Tsukuba
+
 ## Assignment 2
 ### Fisher’s Iris Classification Problem
 This is a classical benchmark problem in pattern recognition which asks to classify the 3 species of plants (iris) from the characteristics observed in their flowers.
