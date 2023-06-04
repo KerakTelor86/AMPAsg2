@@ -28,3 +28,21 @@ The classifiers should be trained using the training set, and evaluated using th
 
 You may use the programming language of your choice. Program the core classifier parts by reviewing the course materials and see if it really works as explained in the lecture. Do not use ready-made tools (e.g. the “LinearDiscriminantAnalysis” package of scikit-learn). Do not copy-paste Fisher-LDA programs floating around on the net. This is a must. In the report, include your source codes.
 
+
+### Results
+
+    KNN (K=7) Accuracy
+    Mean    : 0.956000
+    Variance: 0.000446
+
+    Fisher's LDA Accuracy
+    Mean    : 0.787333
+    Variance: 0.003617
+
+In the case of this problem, Fisher's LDA does not work very well when used with the described method of creating 3 separate classifiers. This may be due factors such as the difficulty in comparing the results of the classifiers.
+
+Specifically in this work, each classifier was made to output the relative likelihood that the current input vector would belong to the class it is classifying for. The definition of this relative likelihood value differs from one classifier to the next and is difficult to compare directly.
+
+However, there exists generalizations of Fisher's LDA to multiple classes, which may better handle this issue. These generalizations involve altering the calculations for both within-class and between-class scatter functions, better accommodating the properties that naturally come with multiple class classification problems.
+
+Finally, the K-nearest neighbor classifier performs relatively quite well, as it generally will when enough data is available to generalize with.
